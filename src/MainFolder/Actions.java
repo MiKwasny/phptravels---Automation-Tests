@@ -10,6 +10,7 @@ public class Actions
     public static MenuElement element = new MenuElement();
     public static PathToLogin pathToLogin = new PathToLogin();
 
+
     public static void FillLoginForm (String Username, String Password) throws InterruptedException {
 
         lsPost.UserNameField.sendKeys(Username);
@@ -58,6 +59,8 @@ public class Actions
         pathToLogin.LoginPage.click();
         Thread.sleep(4000);
     }
+
+
 
 }
 

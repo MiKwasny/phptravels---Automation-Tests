@@ -17,6 +17,7 @@ public class Main {
             Thread.sleep(2000);
 
             Actions.ClickHotelsButton();
+            HotelPageFilters.ThreeStar();
 
             System.out.println("Test completed.. for now ");
         }

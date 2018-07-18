@@ -8,16 +8,19 @@ public class Main {
 
             WebBrowserLaunch.Launch();
 
-            TitleCheck.TitleChecking("PHPTRAVELS | Travel Technology Partner");
+            //TitleCheck.TitleChecking("PHPTRAVELS | Travel Technology Partner");
 
-            Actions.GoToLoginPage();
+            //Actions.GoToLoginPage();
 
-            Actions.FillLoginForm(Config.Credentials.Valid.Username, Config.Credentials.Valid.Password);
+            //Actions.FillLoginForm(Config.Credentials.Valid.Username, Config.Credentials.Valid.Password);
 
-            Thread.sleep(2000);
+            //Thread.sleep(2000);
 
             Actions.ClickHotelsButton();
-            HotelPageFilters.ThreeStar();
+            //Thread.sleep(6000);
+            PickFilters.HotelPageFilters.StarGrade.StarsBar();
+            PickFilters.HotelPageFilters.Amenities.BarLounge();
+            PickFilters.HotelPageFilters.PropertyTypes.Motel();
 
             System.out.println("Test completed.. for now ");
         }

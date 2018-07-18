@@ -6,13 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class FilterPositions {
 
-    public FilterPositions()
-    {
-
+    public FilterPositions() {
         PageFactory.initElements(Driver.driver, this);
-
     }
 
     @FindBy(how = How.CSS, using = "#body-section > div.listingbg > div > div.col-md-3.hidden-sm.hidden-xs.filter > form > button:nth-child(3)")
@@ -44,6 +42,14 @@ public class FilterPositions {
     @FindBy(how = How.CSS, using = "#body-section > div.listingbg > div > div.col-md-3.hidden-sm.hidden-xs.filter > form > button:nth-child(5)")
 
     public WebElement PriceRangeBar;
+
+    @FindBy(how = How.CSS, using = "#collapse2 > div > div > div.slider-track > div:nth-child(2)")
+
+    public WebElement LeftPriceRangeBar;
+
+    @FindBy(how = How.CSS, using = "#collapse2 > div > div > div.slider-track > div:nth-child(3)")
+
+    public WebElement RightPriceRangeBar;
 
 
     //Property Types
@@ -178,6 +184,129 @@ public class FilterPositions {
 
     @FindBy(how = How.CSS, using = "#searchform")
 
-    public WebElement FilterSearch;
+    public WebElement SearchHotel;
 
+    //Flights------------------------------------------------------------------------------
+
+    @FindBy(how = How.CSS, using = "#body-section > div.listingbg > div > div.col-md-3 > div > div.panel-body > div:nth-child(1) > label > div > ins")
+
+    public WebElement NonStop;
+
+    @FindBy(how = How.CSS, using = "#body-section > div.listingbg > div > div.col-md-3 > div > div.panel-body > div:nth-child(2) > label > div > ins")
+
+    public WebElement Transit;
+
+    @FindBy(how = How.CSS, using = "#body-section > div.listingbg > div > div.col-md-3 > div > div.panel-body > div:nth-child(4) > div > div > ins")
+
+    public WebElement Refundable;
+
+    //Tours
+
+    @FindBy(how = How.CSS, using = "#body-section > div.listingbg > div > div.col-md-3.hidden-sm.hidden-xs.filter > form > button:nth-child(7)")
+
+    public WebElement TourTypesBar;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(3) > div > ins")
+
+    public WebElement Private;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(5) > div > ins")
+
+    public WebElement JoinIn;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(7) > div > ins")
+
+    public WebElement Adventure;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(9) > div > ins")
+
+    public WebElement Educational;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(11) > div > ins")
+
+    public WebElement Corporate;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(13) > div > ins")
+
+    public WebElement Couples;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(15) > div > ins")
+
+    public WebElement StaffTraining;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(17) > div > ins")
+
+    public WebElement DiscoveryTours;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(19) > div > ins")
+
+    public WebElement Family;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(21) > div > ins")
+
+    public WebElement Holidays1;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(23) > div > ins")
+
+    public WebElement WildlifeSafaris;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(25) > div > ins")
+
+    public WebElement Holidays2;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(27) > div > ins")
+
+    public WebElement HistoryCulture;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(29) > div > ins")
+
+    public WebElement BeachHolidays;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(31) > div > ins")
+
+    public WebElement Sightseeing;
+
+    @FindBy(how = How.CSS, using = "#searchform")
+
+    public WebElement SearchTour;
+
+    //Cars
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(3) > div > ins")
+
+    public WebElement Van;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(5) > div > ins")
+
+    public WebElement Luxury;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(7) > div > ins")
+
+    public WebElement FullSize;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(9) > div > ins")
+
+    public WebElement Standard;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(11) > div > ins")
+
+    public WebElement Compact;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(13) > div > ins")
+
+    public WebElement Economy;
+
+    @FindBy(how = How.CSS, using = "#collapse3 > div.hpadding20 > div:nth-child(15) > div > ins")
+
+    public WebElement Mini;
+
+    @FindBy(how = How.CSS, using = "#searchform")
+
+    public WebElement SearchCar;
+
+//@FindBy(how = How.CSS, using = "#collapse5 > div > select")
+
+//public WebElement ListSelect;
 }
+
+

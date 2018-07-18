@@ -2,27 +2,56 @@ package MainFolder;
 
 public class Main {
 
-    public static void main(String[] args)throws InterruptedException {
+    public static void main(String[] args){
 
         try{
 
             WebBrowserLaunch.Launch();
 
-            //TitleCheck.TitleChecking("PHPTRAVELS | Travel Technology Partner");
+            TitleCheck.TitleChecking("PHPTRAVELS | Travel Technology Partner");
 
             //Actions.GoToLoginPage();
 
             //Actions.FillLoginForm(Config.Credentials.Valid.Username, Config.Credentials.Valid.Password);
 
-            //Thread.sleep(2000);
-
             Actions.ClickHotelsButton();
-            //Thread.sleep(6000);
-            PickFilters.HotelPageFilters.StarGrade.StarsBar();
+
+            PickFilters.HotelPageFilters.StarGrade.FiveStar();
             PickFilters.HotelPageFilters.Amenities.BarLounge();
-            PickFilters.HotelPageFilters.PropertyTypes.Motel();
+            PickFilters.HotelPageFilters.Amenities.Spa();
+            PickFilters.HotelPageFilters.PropertyTypes.Hotel();
+            PickFilters.HotelPageFilters.PriceRange.LeftPriceBarMove(10);
+            PickFilters.HotelPageFilters.PriceRange.RightPriceBarMove(40);
+            PickFilters.HotelPageFilters.SearchHotel();
+
+            Thread.sleep(6000);
+
+            Actions.ClickCarsButton();
+
+            PickFilters.CarsPageFilters.AirPortPickUp.Yes();
+            PickFilters.CarsPageFilters.CarTypes.Standard();
+            PickFilters.CarsPageFilters.PriceRange.LeftPriceBarMove(10);
+            PickFilters.CarsPageFilters.PriceRange.RightPriceBarMove(50);
+            PickFilters.CarsPageFilters.CarsSearch();
+            
+            Thread.sleep(6000);
+
+            Actions.ClickToursButton();
+
+            PickFilters.ToursPageFilters.StarGrade.FourStar();
+            PickFilters.ToursPageFilters.TourTypes.Family();
+            PickFilters.ToursPageFilters.PriceRange.LeftPriceBarMove(20);
+            PickFilters.ToursPageFilters.PriceRange.RightPriceBarMove(10);
+
+            Thread.sleep(6000);
+
+            Actions.ClickFlightsButton();
+
+            PickFilters.FlightsPageFilters.NonStop();
+            PickFilters.FlightsPageFilters.Transit();
 
             System.out.println("Test completed.. for now ");
+            //Driver.driver.quit();
         }
 
         catch(Exception meh){

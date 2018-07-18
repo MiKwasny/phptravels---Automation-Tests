@@ -16,6 +16,7 @@ public class Actions
         lsPost.UserNameField.sendKeys(Username);
         lsPost.PasswordField.sendKeys(Password);
         lsPost.LoginButton.click();
+        Thread.sleep(4000);
     }
 
     public static void ClickHomeButton (){

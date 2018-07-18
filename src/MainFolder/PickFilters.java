@@ -48,10 +48,20 @@ public class PickFilters {
             }
 
             public static void LeftPriceBarMove(int x){
+
                 WebElement slider = filterPositions.LeftPriceRangeBar;
 
                 Actions move = new Actions(Driver.driver);
                 Action action = move.dragAndDropBy(slider, x, 0).build();
+                action.perform();
+            }
+
+            public static void RightPriceBarMove(int x){
+
+                WebElement slider = filterPositions.RightPriceRangeBar;
+
+                Actions move = new Actions(Driver.driver);
+                Action action = move.dragAndDropBy(slider, -x, 0).build();
                 action.perform();
             }
         }
@@ -201,8 +211,8 @@ public class PickFilters {
             filterPositions.Refundable.click();
         }
 
-        public static void SearchByAirLines(String AirLines) {
-            driver.findElement(By.id("checkair" + AirLines)).click();
+        public static void SearchByAirLines() {
+            driver.findElement(By.linkText("Emirates")).click();
         }
     }
     public static class ToursPageFilters {
@@ -235,8 +245,27 @@ public class PickFilters {
         }
 
         public static class PriceRange {
+
             public static void PropertyTypesBar() {
                 filterPositions.PropertyTypesBar.click();
+            }
+
+            public static void LeftPriceBarMove(int x){
+
+                WebElement slider = filterPositions.LeftPriceRangeBar;
+
+                Actions move = new Actions(Driver.driver);
+                Action action = move.dragAndDropBy(slider, x, 0).build();
+                action.perform();
+            }
+
+            public static void RightPriceBarMove(int x){
+
+                WebElement slider = filterPositions.RightPriceRangeBar;
+
+                Actions move = new Actions(Driver.driver);
+                Action action = move.dragAndDropBy(slider, -x, 0).build();
+                action.perform();
             }
         }
 
@@ -344,6 +373,24 @@ public class PickFilters {
         public static class PriceRange {
             public static void PropertyTypesBar() {
                 filterPositions.PropertyTypesBar.click();
+            }
+
+            public static void LeftPriceBarMove(int x){
+
+                WebElement slider = filterPositions.LeftPriceRangeBar;
+
+                Actions move = new Actions(Driver.driver);
+                Action action = move.dragAndDropBy(slider, x, 0).build();
+                action.perform();
+            }
+
+            public static void RightPriceBarMove(int x){
+
+                WebElement slider = filterPositions.RightPriceRangeBar;
+
+                Actions move = new Actions(Driver.driver);
+                Action action = move.dragAndDropBy(slider, -x, 0).build();
+                action.perform();
             }
         }
 

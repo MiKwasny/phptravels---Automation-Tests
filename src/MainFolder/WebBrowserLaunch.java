@@ -10,8 +10,8 @@ public class WebBrowserLaunch extends Main {
         String appUrl = "http://www.phptravels.net/";
         Driver.driver.get(appUrl);
         //Driver.driver.manage().window().maximize();
-        String Title = Driver.driver.getTitle();
-        System.out.println("Actual title is " + Title);
+        //String Title = Driver.driver.getTitle();
+        //System.out.println("Actual title is " + Title);
 
     }
 

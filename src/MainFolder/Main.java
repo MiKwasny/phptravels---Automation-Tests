@@ -29,11 +29,12 @@ public class Main {
             Actions.ClickCarsButton();
 
             PickFilters.CarsPageFilters.AirPortPickUp.Yes();
+            PickFilters.CarsPageFilters.StarGrade.ThreeStar();
             PickFilters.CarsPageFilters.CarTypes.Standard();
             PickFilters.CarsPageFilters.PriceRange.LeftPriceBarMove(10);
             PickFilters.CarsPageFilters.PriceRange.RightPriceBarMove(50);
             PickFilters.CarsPageFilters.CarsSearch();
-            
+
             Thread.sleep(6000);
 
             Actions.ClickToursButton();
@@ -51,7 +52,10 @@ public class Main {
             PickFilters.FlightsPageFilters.Transit();
 
             System.out.println("Test completed.. for now ");
-            //Driver.driver.quit();
+
+            Thread.sleep(6000);
+
+            Driver.driver.quit();
         }
 
         catch(Exception meh){

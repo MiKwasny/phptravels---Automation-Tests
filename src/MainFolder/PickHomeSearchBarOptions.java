@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class PickHomeSearchBarOptions {
 
@@ -20,76 +21,60 @@ public class PickHomeSearchBarOptions {
 
         public static class PickDate{
 
-            public static void CheckIn(int year, String month, int day){
+            public static void CheckIn(int year, String month, int day) {
 
                 homeSearchBarElements.HotelCalendarCheckInField.click();
 
                 Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-days > table > thead > tr:nth-child(1) > th.switch")).click();
 
-                //String yearAsString = Integer.toString(year);
+                int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+                int calculation = year - currentYear;
 
-                if (year >2018){
+                for (int i = Math.abs(calculation); i > 0; i--) {
 
-                    for(int i = (year - Calendar.getInstance().get(Calendar.YEAR)); i<-1 ; i--) {
-                        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(yearAsString)));
-                        Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-days > table > thead > tr:nth-child(1) > th.next")).click();
-                    }}
+                    if (year >= currentYear) {
 
-                Driver.driver.findElement(By.linkText(month)).click();
+                        Driver.driver.findElement(By.cssSelector("div.datepicker:nth-child(13) > div:nth-child(2) > table:nth-child(1) > thead:nth-child(1) > tr:nth-child(1) > th:nth-child(3)")).click();
+                    } else {
 
-                if (year <2018){
+                        Driver.driver.findElement(By.cssSelector("div.datepicker:nth-child(13) > div:nth-child(2) > table:nth-child(1) > thead:nth-child(1) > tr:nth-child(1) > th:nth-child(1)")).click();
+                    }
 
-                    for(int i = (Calendar.getInstance().get(Calendar.YEAR)-year); i<-1; i--) {
-
-                        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(yearAsString)));
-                        Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-days > table > thead > tr:nth-child(1) > th.prev")).click();
-                    }}
-
-                Driver.driver.findElement(By.linkText(month)).click();
-
-                Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-days > table > thead > tr:nth-child(1) > th.switch")).click();
-
-                if(day <= Calendar.getInstance().get(Calendar.DAY_OF_MONTH)){
-                    String dayAsString = Integer.toString(Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-                    Driver.driver.findElement(By.linkText(dayAsString)).click();
                 }
 
-                else{
-                    String day2AsString = Integer.toString(day);
-                    Driver.driver.findElement(By.linkText(day2AsString)).click();
+                for (int i = 1; i <= 12; i++) {
+
+                    String monthName = Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-months > table > tbody > tr > td > span:nth-child(" + i + ")")).getText();
+
+                    if (monthName.contentEquals(month)) {
+
+                        Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-months > table > tbody > tr > td > span:nth-child(" + i + ")")).click();
+
+                    }
+
                 }
 
+                Driver.driver.findElement(By.cssSelector(".dpd1")).click();
 
-//                public static void Year(){
-//
-//                }
-//
-//                public static void Month(){
-//
-//                }
-//
-//                public static void Day(int row, int column){
-//
-//                    homeSearchBarElements.HotelCalendarCheckInField.click();
-//                    Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-days > table > tbody > tr:nth-child("+column+") > td:nth-child(r"+row+")")).click();
-//                }
+                String MyDay = Integer.toString(day);
 
+                WebElement tBody = Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-days > table > tbody"));
 
+                List<WebElement> columns=tBody.findElements(By.tagName("td"));
 
-            }
-            {
+                for (WebElement cell : columns)
+                {
+                    if (cell.getText().equals(MyDay) && !cell.getAttribute("Class").equals("day  old"));
+                    {
+                        String a = cell.getAttribute("Class");
+                        System.out.println(a);
+                        cell.click();
+                        break;
 
-
-
-
-
+                    }
+                }
 
             }
-        }
-
-    }
 
 
-
-
-}
+        } } }

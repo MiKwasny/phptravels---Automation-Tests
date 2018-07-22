@@ -53,13 +53,13 @@ public class Main {
 //
 //            Thread.sleep(6000);
 
-            PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckIn(2022, "Feb", 22);
+            PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckIn(2021, "Jan", 31);
 
             System.out.println("Test completed.. for now ");
 
             Thread.sleep(6000);
 
-            Driver.driver.quit();
+//            Driver.driver.quit();
         }
 
         catch(Exception meh){

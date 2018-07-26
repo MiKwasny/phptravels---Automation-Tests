@@ -8,12 +8,12 @@ public class Main {
 
             WebBrowserLaunch.Launch();
 
-            TitleCheck.TitleChecking("PHPTRAVELS | Travel Technology Partner");
+            //TitleCheck.TitleChecking("PHPTRAVELS | Travel Technology Partner");
 
-//            Actions.GoToLoginPage();
+            //Actions.GoToLoginPage();
+
+            //Actions.FillLoginForm(Config.Credentials.Valid.Username, Config.Credentials.Valid.Password);
 //
-//            Actions.FillLoginForm(Config.Credentials.Valid.Username, Config.Credentials.Valid.Password);
-
 //            Actions.ClickHotelsButton();
 //
 //            PickFilters.HotelPageFilters.StarGrade.FiveStar();
@@ -51,15 +51,40 @@ public class Main {
 //            PickFilters.FlightsPageFilters.NonStop();
 //            PickFilters.FlightsPageFilters.Transit();
 //
+//            System.out.println("Test completed.. for now ");
+//
 //            Thread.sleep(6000);
 
-            PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckIn(2021, "Jan", 31);
 
-            System.out.println("Test completed.. for now ");
+            //Driver.driver.quit();
 
-            Thread.sleep(6000);
+//            PickHomeSearchBarOptions.HotelSearchBar.HotelOrLocation("istanbul", 1, 1);
+//            PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckIn(2019, "Feb", 16);
+//            PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckOut(2020, "Aug", 25);
+//            PickHomeSearchBarOptions.HotelSearchBar.AdultAndChildrenNumber(3,2);
+//            PickHomeSearchBarOptions.HotelSearchBar.HotelSearch();
 
-//            Driver.driver.quit();
+            Actions.FlightsBarClick();
+            PickHomeSearchBarOptions.FlightsSearchBar.EnterCityOrAirportFrom("Warsaw", 1);
+            PickHomeSearchBarOptions.FlightsSearchBar.EnterCityOrAirportDeparture("Athens", 2);
+            PickHomeSearchBarOptions.FlightsSearchBar.RoundTrip();
+            PickHomeSearchBarOptions.FlightsSearchBar.OneWay();
+            PickHomeSearchBarOptions.FlightsSearchBar.RoundTrip();
+            PickHomeSearchBarOptions.FlightsSearchBar.PickClass("Economy");
+            PickHomeSearchBarOptions.FlightsSearchBar.DepartDate(2018, "Aug", 20);
+            PickHomeSearchBarOptions.FlightsSearchBar.ReturnDate(2018, "Aug", 25);
+            PickHomeSearchBarOptions.FlightsSearchBar.NumberOfQuests(2,1,1);
+            PickHomeSearchBarOptions.FlightsSearchBar.ConfirmQuests();
+            PickHomeSearchBarOptions.FlightsSearchBar.SearchBy();
+
+            //Actions.ToursBarClick();
+            //PickHomeSearchBarOptions.ToursSearchBar.SearchByListingOrCityName("Dubai", 1, 1);
+
+
+
+
+
+
         }
 
         catch(Exception meh){

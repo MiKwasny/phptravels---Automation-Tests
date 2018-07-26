@@ -1,14 +1,18 @@
 package MainFolder;
 
+import UI_Elements.HomeSearchBarElements;
 import UI_Elements.LoginScenarioPost;
 import UI_Elements.MenuElement;
 import UI_Elements.PathToLogin;
+
+
 
 public class Actions
 {
     public static LoginScenarioPost lsPost = new LoginScenarioPost();
     public static MenuElement element = new MenuElement();
     public static PathToLogin pathToLogin = new PathToLogin();
+    public static HomeSearchBarElements homeSearchBarElements = new HomeSearchBarElements();
 
 
     public static void FillLoginForm (String Username, String Password) throws InterruptedException {
@@ -61,12 +65,21 @@ public class Actions
         Thread.sleep(4000);
     }
 
+    public static void HotelsBarClick(){
+
+        homeSearchBarElements.HomeHotelsBar.click();
+    }
+
+    public static void FlightsBarClick(){
+
+        homeSearchBarElements.HomeFlightsBar.click();
+    }
+
+    public static void ToursBarClick(){
+
+        homeSearchBarElements.HomeToursBar.click();
+    }
 
 
 }
-
-
-
-
-
 

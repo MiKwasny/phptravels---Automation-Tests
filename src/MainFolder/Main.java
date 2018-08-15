@@ -1,12 +1,15 @@
 package MainFolder;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class Main {
 
-    public static void main(String[] args){
+    public static class TestInitiation{}
 
-        try{
 
-            WebBrowserLaunch.Launch();
+
+
 
             //TitleCheck.TitleChecking("PHPTRAVELS | Travel Technology Partner");
 
@@ -58,42 +61,56 @@ public class Main {
 
             //Driver.driver.quit();
 
-//            PickHomeSearchBarOptions.HotelSearchBar.HotelOrLocation("istanbul", 1, 1);
-//            PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckIn(2019, "Feb", 16);
-//            PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckOut(2020, "Aug", 25);
-//            PickHomeSearchBarOptions.HotelSearchBar.AdultAndChildrenNumber(3,2);
-//            PickHomeSearchBarOptions.HotelSearchBar.HotelSearch();
+            @Test
 
-            Actions.FlightsBarClick();
-            PickHomeSearchBarOptions.FlightsSearchBar.EnterCityOrAirportFrom("Warsaw", 1);
-            PickHomeSearchBarOptions.FlightsSearchBar.EnterCityOrAirportDeparture("Athens", 2);
-            PickHomeSearchBarOptions.FlightsSearchBar.RoundTrip();
-            PickHomeSearchBarOptions.FlightsSearchBar.OneWay();
-            PickHomeSearchBarOptions.FlightsSearchBar.RoundTrip();
-            PickHomeSearchBarOptions.FlightsSearchBar.PickClass("Economy");
-            PickHomeSearchBarOptions.FlightsSearchBar.DepartDate(2018, "Aug", 20);
-            PickHomeSearchBarOptions.FlightsSearchBar.ReturnDate(2018, "Aug", 25);
-            PickHomeSearchBarOptions.FlightsSearchBar.NumberOfQuests(2,1,1);
-            PickHomeSearchBarOptions.FlightsSearchBar.ConfirmQuests();
-            PickHomeSearchBarOptions.FlightsSearchBar.SearchBy();
+            public void HotelBarTest() {
 
+                try {
+                    WebBrowserLaunch.Launch();
+                    PickHomeSearchBarOptions.HotelSearchBar.HotelOrLocation("istanbul", 1, 1);
+                    PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckIn(2019, "Feb", 16);
+                    PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckOut(2020, "Aug", 25);
+                    PickHomeSearchBarOptions.HotelSearchBar.AdultAndChildrenNumber(3,2);
+                    PickHomeSearchBarOptions.HotelSearchBar.HotelSearch();
+
+                    Thread.sleep(6000);
+                }
+
+                catch(Exception e) {
+
+                }
+           }
+
+            @Test
+            public void FlightBarTest() {
+
+                try {
+                    WebBrowserLaunch.Launch();
+                    Actions.FlightsBarClick();
+                    PickHomeSearchBarOptions.FlightsSearchBar.EnterCityOrAirportFrom("Warsaw", 1);
+                    PickHomeSearchBarOptions.FlightsSearchBar.EnterCityOrAirportDeparture("Athens", 2);
+                    PickHomeSearchBarOptions.FlightsSearchBar.RoundTrip();
+                    PickHomeSearchBarOptions.FlightsSearchBar.OneWay();
+                    PickHomeSearchBarOptions.FlightsSearchBar.RoundTrip();
+                    PickHomeSearchBarOptions.FlightsSearchBar.PickClass("Economy");
+                    PickHomeSearchBarOptions.FlightsSearchBar.DepartDate(2018, "Aug", 20);
+                    PickHomeSearchBarOptions.FlightsSearchBar.ReturnDate(2018, "Aug", 25);
+                    PickHomeSearchBarOptions.FlightsSearchBar.NumberOfQuests(2, 1, 1);
+                    PickHomeSearchBarOptions.FlightsSearchBar.ConfirmQuests();
+                    PickHomeSearchBarOptions.FlightsSearchBar.SearchBy();
+
+                }
+
+                catch(Exception e) {
+
+                }
+            }
             //Actions.ToursBarClick();
             //PickHomeSearchBarOptions.ToursSearchBar.SearchByListingOrCityName("Dubai", 1, 1);
 
-
-
-
-
-
-        }
-
-        catch(Exception meh){
-            System.out.println("System ERROR");
-            System.exit(-1);
         }
 
 
 
 
-    }
-}
+

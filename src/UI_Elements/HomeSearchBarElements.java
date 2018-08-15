@@ -138,7 +138,7 @@ public class HomeSearchBarElements {
 
     @FindBy(how = How.CSS, using = "#tchkin > div > input")
 
-    public WebElement CalendarField;
+    public WebElement TourCalendarField;
 
     @FindBy(how = How.CSS, using = "#adults")
 

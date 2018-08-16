@@ -144,7 +144,7 @@ public class HomeSearchBarElements {
 
     public WebElement QuestsDropDownList;
 
-    @FindBy(how = How.CSS, using = "#select2-drop > div > input")
+    @FindBy(how = How.CSS, using = "#s2id_tourtype > a")
 
     public WebElement KindOfTour;
 

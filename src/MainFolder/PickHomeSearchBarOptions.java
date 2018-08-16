@@ -455,6 +455,41 @@ public class PickHomeSearchBarOptions {
 
         }
 
+        public static void NumberOfGuests(int NumberOfGuests){
+
+            if(NumberOfGuests <=5 && NumberOfGuests >0) {
+
+                homeSearchBarElements.QuestsDropDownList.click();
+
+                Select PickGuestsNumber = new Select(Driver.driver.findElement(By.cssSelector("#adults")));
+
+                String GuestsNumber = Integer.toString(NumberOfGuests);
+
+                PickGuestsNumber.selectByVisibleText(GuestsNumber + " Guests");
+            }
+            else{
+
+                System.out.println("Please pick a value between 0 and 5!");
+            }
+        }
+
+        public static void TourType(String TourType, int position) {
+
+            homeSearchBarElements.KindOfTour.click();
+
+            Driver.driver.findElement(By.cssSelector("#select2-drop > div > input")).sendKeys(TourType);
+
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#select2-drop > ul > li:nth-child(2)")));
+
+            Driver.driver.findElement(By.cssSelector("#select2-drop > ul > li:nth-child(" +position+ ")")).click();
+        }
+
+        public static void SearchBy(){
+
+            homeSearchBarElements.TourSearchBy.click();
+        }
+
+
 
     }
 

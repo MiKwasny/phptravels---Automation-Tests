@@ -123,6 +123,10 @@ public class Main {
         Actions.ToursBarClick();
         PickHomeSearchBarOptions.ToursSearchBar.SearchByListingOrCityName("Dubai", 1, 1);
         PickHomeSearchBarOptions.ToursSearchBar.TourDate(2019, "Jul", 20);
+        PickHomeSearchBarOptions.ToursSearchBar.NumberOfGuests(2);
+        PickHomeSearchBarOptions.ToursSearchBar.TourType("Co", 2);
+        PickHomeSearchBarOptions.ToursSearchBar.SearchBy();
+
     }
 
 

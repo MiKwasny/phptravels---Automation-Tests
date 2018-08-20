@@ -1,5 +1,6 @@
 package MainFolder;
 
+import TestAssertions.TestAssertions;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,7 +32,7 @@ public class Main {
 
     public void HotelModuleSearchTest() {
 
-
+        Actions.ClickHotelsButton();
         PickFilters.HotelPageFilters.StarGrade.FiveStar();
         PickFilters.HotelPageFilters.Amenities.BarLounge();
         PickFilters.HotelPageFilters.Amenities.Spa();
@@ -107,8 +108,8 @@ public class Main {
             PickHomeSearchBarOptions.FlightsSearchBar.RoundTrip();
             PickHomeSearchBarOptions.FlightsSearchBar.PickClass("Economy");
             PickHomeSearchBarOptions.FlightsSearchBar.DepartDate(2018, "Aug", 20);
-            PickHomeSearchBarOptions.FlightsSearchBar.ReturnDate(2018, "Aug", 25);
-            PickHomeSearchBarOptions.FlightsSearchBar.NumberOfQuests(2, 1, 1);
+            PickHomeSearchBarOptions.FlightsSearchBar.ReturnDate(2018, "Aug", 27);
+            PickHomeSearchBarOptions.FlightsSearchBar.NumberOfQuests(2, 1, 0);
             PickHomeSearchBarOptions.FlightsSearchBar.ConfirmQuests();
             PickHomeSearchBarOptions.FlightsSearchBar.SearchBy();
 
@@ -126,6 +127,7 @@ public class Main {
         PickHomeSearchBarOptions.ToursSearchBar.NumberOfGuests(2);
         PickHomeSearchBarOptions.ToursSearchBar.TourType("Co", 2);
         PickHomeSearchBarOptions.ToursSearchBar.SearchBy();
+        TestAssertions.FinalTourBarPageCheck();
 
     }
 

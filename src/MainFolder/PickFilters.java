@@ -34,7 +34,7 @@ public class PickFilters {
             }
 
             public static void FourStar() {
-                filterPositions.FiveStar.click();
+                filterPositions.FourStar.click();
             }
 
             public static void FiveStar() {
@@ -47,7 +47,7 @@ public class PickFilters {
                 filterPositions.PropertyTypesBar.click();
             }
 
-            public static void LeftPriceBarMove(int x){
+            public static void LeftPriceBarMove(int x) {
 
                 WebElement slider = filterPositions.LeftPriceRangeBar;
 
@@ -56,7 +56,7 @@ public class PickFilters {
                 action.perform();
             }
 
-            public static void RightPriceBarMove(int x){
+            public static void RightPriceBarMove(int x) {
 
                 WebElement slider = filterPositions.RightPriceRangeBar;
 
@@ -104,7 +104,8 @@ public class PickFilters {
                 filterPositions.Villa.click();
             }
         }
-        public static class Amenities{
+
+        public static class Amenities {
 
             public static void CollapseAmenitiesBar() {
                 filterPositions.CollapseAmenitiesBar.click();
@@ -191,7 +192,7 @@ public class PickFilters {
             }
         }
 
-        public static void SearchHotel(){
+        public static void SearchHotel() {
 
             filterPositions.SearchHotel.click();
         }
@@ -215,6 +216,7 @@ public class PickFilters {
             driver.findElement(By.linkText("Emirates")).click();
         }
     }
+
     public static class ToursPageFilters {
 
         public static class StarGrade {
@@ -236,7 +238,7 @@ public class PickFilters {
             }
 
             public static void FourStar() {
-                filterPositions.FiveStar.click();
+                filterPositions.FourStar.click();
             }
 
             public static void FiveStar() {
@@ -250,7 +252,7 @@ public class PickFilters {
                 filterPositions.PropertyTypesBar.click();
             }
 
-            public static void LeftPriceBarMove(int x){
+            public static void LeftPriceBarMove(int x) {
 
                 WebElement slider = filterPositions.LeftPriceRangeBar;
 
@@ -259,7 +261,7 @@ public class PickFilters {
                 action.perform();
             }
 
-            public static void RightPriceBarMove(int x){
+            public static void RightPriceBarMove(int x) {
 
                 WebElement slider = filterPositions.RightPriceRangeBar;
 
@@ -336,11 +338,13 @@ public class PickFilters {
             }
 
         }
-        public static void CarsSearch(){
+
+        public static void CarsSearch() {
 
             filterPositions.SearchTour.click();
         }
     }
+
     public static class CarsPageFilters {
 
         public static class StarGrade {
@@ -362,7 +366,7 @@ public class PickFilters {
             }
 
             public static void FourStar() {
-                filterPositions.FiveStar.click();
+                filterPositions.FourStar.click();
             }
 
             public static void FiveStar() {
@@ -375,7 +379,7 @@ public class PickFilters {
                 filterPositions.PropertyTypesBar.click();
             }
 
-            public static void LeftPriceBarMove(int x){
+            public static void LeftPriceBarMove(int x) {
 
                 WebElement slider = filterPositions.LeftPriceRangeBar;
 
@@ -384,7 +388,7 @@ public class PickFilters {
                 action.perform();
             }
 
-            public static void RightPriceBarMove(int x){
+            public static void RightPriceBarMove(int x) {
 
                 WebElement slider = filterPositions.RightPriceRangeBar;
 
@@ -425,9 +429,10 @@ public class PickFilters {
             }
 
         }
-        public static class AirPortPickUp{
 
-            public static void Yes(){
+        public static class AirPortPickUp {
+
+            public static void Yes() {
                 //filterPositions.ListSelect.click();
 
                 //driver.findElement(By.linkText("Yes")).click();
@@ -436,7 +441,7 @@ public class PickFilters {
                 PickUp.selectByVisibleText("Yes");
             }
 
-            public static void No(){
+            public static void No() {
                 //filterPositions.ListSelect.click();
 
                 //driver.findElement(By.linkText("No")).click();
@@ -445,7 +450,8 @@ public class PickFilters {
                 PickUp.selectByVisibleText("No");
             }
         }
-        public static void CarsSearch(){
+
+        public static void CarsSearch() {
 
             filterPositions.SearchCar.click();
         }

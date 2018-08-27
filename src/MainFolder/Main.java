@@ -22,6 +22,7 @@ public class Main {
             TitleCheck.TitleChecking("PHPTRAVELS | Travel Technology Partner");
             Actions.GoToLoginPage();
             Actions.FillLoginForm(Config.Credentials.Valid.Username, Config.Credentials.Valid.Password);
+            TestAssertions.FinaLoginPageCheck();
 
         } catch (Exception e) {
 
@@ -40,6 +41,7 @@ public class Main {
         PickFilters.HotelPageFilters.PriceRange.LeftPriceBarMove(10);
         PickFilters.HotelPageFilters.PriceRange.RightPriceBarMove(40);
         PickFilters.HotelPageFilters.SearchHotel();
+        TestAssertions.FinalHotelModulePageCheck();
     }
 
     @Test
@@ -48,11 +50,13 @@ public class Main {
 
         Actions.ClickCarsButton();
         PickFilters.CarsPageFilters.AirPortPickUp.Yes();
-        PickFilters.CarsPageFilters.StarGrade.ThreeStar();
+        PickFilters.CarsPageFilters.StarGrade.FourStar();
         PickFilters.CarsPageFilters.CarTypes.Standard();
         PickFilters.CarsPageFilters.PriceRange.LeftPriceBarMove(10);
         PickFilters.CarsPageFilters.PriceRange.RightPriceBarMove(50);
         PickFilters.CarsPageFilters.CarsSearch();
+        TestAssertions.FinalCarModulePageCheck();
+
     }
 
     @Test
@@ -61,9 +65,11 @@ public class Main {
 
         Actions.ClickToursButton();
         PickFilters.ToursPageFilters.StarGrade.FourStar();
-        PickFilters.ToursPageFilters.TourTypes.Family();
-        PickFilters.ToursPageFilters.PriceRange.LeftPriceBarMove(20);
-        PickFilters.ToursPageFilters.PriceRange.RightPriceBarMove(10);
+        PickFilters.ToursPageFilters.TourTypes.Private();
+        PickFilters.ToursPageFilters.PriceRange.LeftPriceBarMove(5);
+        PickFilters.ToursPageFilters.PriceRange.RightPriceBarMove(25);
+        PickFilters.ToursPageFilters.CarsSearch();
+        TestAssertions.FinalTourModulePageCheck();
     }
 
     @Test
@@ -72,9 +78,9 @@ public class Main {
 
 
         Actions.ClickFlightsButton();
-
         PickFilters.FlightsPageFilters.NonStop();
         PickFilters.FlightsPageFilters.Transit();
+        TestAssertions.FinalFlightModulePageCheck();
     }
 
     @Test
@@ -88,7 +94,7 @@ public class Main {
             PickHomeSearchBarOptions.HotelSearchBar.PickDate.CheckOut(2020, "Aug", 25);
             PickHomeSearchBarOptions.HotelSearchBar.AdultAndChildrenNumber(3, 2);
             PickHomeSearchBarOptions.HotelSearchBar.HotelSearch();
-
+            TestAssertions.FinalHotelBarPageCheck();
 
         } catch (Exception e) {
 
@@ -96,6 +102,7 @@ public class Main {
     }
 
     @Test
+
     public void FlightBarTest() {
 
         try {
@@ -107,11 +114,12 @@ public class Main {
             PickHomeSearchBarOptions.FlightsSearchBar.OneWay();
             PickHomeSearchBarOptions.FlightsSearchBar.RoundTrip();
             PickHomeSearchBarOptions.FlightsSearchBar.PickClass("Economy");
-            PickHomeSearchBarOptions.FlightsSearchBar.DepartDate(2018, "Aug", 20);
-            PickHomeSearchBarOptions.FlightsSearchBar.ReturnDate(2018, "Aug", 27);
+            PickHomeSearchBarOptions.FlightsSearchBar.DepartDate(2018, "Nov", 20);
+            PickHomeSearchBarOptions.FlightsSearchBar.ReturnDate(2018, "Nov", 27);
             PickHomeSearchBarOptions.FlightsSearchBar.NumberOfQuests(2, 1, 0);
             PickHomeSearchBarOptions.FlightsSearchBar.ConfirmQuests();
             PickHomeSearchBarOptions.FlightsSearchBar.SearchBy();
+            TestAssertions.FinalFlightBarPageCheck();
 
         } catch (Exception e) {
 
@@ -119,6 +127,7 @@ public class Main {
     }
 
     @Test
+
     public void ToursBarTest() {
 
         Actions.ToursBarClick();

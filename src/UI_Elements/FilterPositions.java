@@ -186,7 +186,7 @@ public class FilterPositions {
 
     public WebElement SearchHotel;
 
-    //Flights------------------------------------------------------------------------------
+    //Flights
 
     @FindBy(how = How.CSS, using = "#body-section > div.listingbg > div > div.col-md-3 > div > div.panel-body > div:nth-child(1) > label > div > ins")
 

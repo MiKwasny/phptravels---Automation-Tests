@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class CoreTest extends WebBrowserLaunch {
 
 
-    public static void Test() throws InterruptedException{
+    public static void Test() throws InterruptedException {
 
         //WebBrowserLaunch Test = new WebBrowserLaunch();
 

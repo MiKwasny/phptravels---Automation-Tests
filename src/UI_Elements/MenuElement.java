@@ -7,8 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class MenuElement {
-    public MenuElement()
-    {
+    public MenuElement() {
         PageFactory.initElements(Driver.driver, this);
     }
 

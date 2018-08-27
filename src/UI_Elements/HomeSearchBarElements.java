@@ -213,18 +213,4 @@ public class HomeSearchBarElements {
     public WebElement VisaSearchBy;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

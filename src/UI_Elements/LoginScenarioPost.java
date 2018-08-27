@@ -6,10 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginScenarioPost
-{
-    public LoginScenarioPost()
-    {
+public class LoginScenarioPost {
+    public LoginScenarioPost() {
         PageFactory.initElements(Driver.driver, this);
     }
 
@@ -21,7 +19,6 @@ public class LoginScenarioPost
 
     @FindBy(how = How.CSS, using = "button.btn:nth-child(2)")
     public WebElement LoginButton;
-
 
 
 }

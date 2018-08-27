@@ -1,10 +1,12 @@
 package MainFolder;
+
 import UI_Elements.HomeSearchBarElements;;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.Calendar;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class PickHomeSearchBarOptions {
 
     static HomeSearchBarElements homeSearchBarElements = new HomeSearchBarElements();
 
-    public static class HotelSearchBar{
+    public static class HotelSearchBar {
 
         public static void HotelOrLocation(String HotelOrLocation, int Category, int PositionInCategory) throws InterruptedException {
 
@@ -27,14 +29,13 @@ public class PickHomeSearchBarOptions {
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#select2-drop > ul > li:nth-child(1) > ul > li:nth-child(1)")));
 
                 Driver.driver.findElement(By.cssSelector("#select2-drop > ul > li:nth-child(" + Category + ") > ul > li:nth-child(" + PositionInCategory + ")")).click();
-            }
-            catch (Exception ele) {
+            } catch (Exception ele) {
 
                 System.out.println("The amount of results do not match with selected category number or category position!");
             }
         }
 
-        public static class PickDate{
+        public static class PickDate {
 
             public static void CheckIn(int year, String month, int day) {
 
@@ -51,8 +52,7 @@ public class PickHomeSearchBarOptions {
                     if (year >= currentYear) {
 
                         Driver.driver.findElement(By.cssSelector("div.datepicker:nth-child(13) > div:nth-child(2) > table:nth-child(1) > thead:nth-child(1) > tr:nth-child(1) > th:nth-child(3)")).click();
-                    }
-                    else {
+                    } else {
 
                         Driver.driver.findElement(By.cssSelector("div.datepicker:nth-child(13) > div:nth-child(2) > table:nth-child(1) > thead:nth-child(1) > tr:nth-child(1) > th:nth-child(1)")).click();
                     }
@@ -74,12 +74,10 @@ public class PickHomeSearchBarOptions {
 
                 WebElement tBody = Driver.driver.findElement(By.cssSelector("body > div:nth-child(13) > div.datepicker-days > table > tbody"));
 
-                List<WebElement> columns=tBody.findElements(By.tagName("td"));
+                List<WebElement> columns = tBody.findElements(By.tagName("td"));
 
-                for (WebElement cell : columns)
-                {
-                    if (cell.getText().equals(MyDay) && !cell.getAttribute("Class").equals("day  old"))
-                    {
+                for (WebElement cell : columns) {
+                    if (cell.getText().equals(MyDay) && !cell.getAttribute("Class").equals("day  old")) {
                         cell.click();
                         break;
                     }
@@ -109,11 +107,11 @@ public class PickHomeSearchBarOptions {
 
                 for (int i = 1; i <= 12; i++) {
 
-                    String monthName = Driver.driver.findElement(By.cssSelector("body > div:nth-child(14) > div.datepicker-months > table > tbody > tr > td > span:nth-child("+i+")")).getText();
+                    String monthName = Driver.driver.findElement(By.cssSelector("body > div:nth-child(14) > div.datepicker-months > table > tbody > tr > td > span:nth-child(" + i + ")")).getText();
 
                     if (monthName.contentEquals(month)) {
 
-                        Driver.driver.findElement(By.cssSelector("body > div:nth-child(14) > div.datepicker-months > table > tbody > tr > td > span:nth-child("+i+")")).click();
+                        Driver.driver.findElement(By.cssSelector("body > div:nth-child(14) > div.datepicker-months > table > tbody > tr > td > span:nth-child(" + i + ")")).click();
                     }
                 }
 
@@ -123,7 +121,7 @@ public class PickHomeSearchBarOptions {
 
                 WebElement tBody = Driver.driver.findElement(By.cssSelector("div.datepicker:nth-child(14) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2)"));
 
-                List<WebElement> columns=tBody.findElements(By.tagName("td"));
+                List<WebElement> columns = tBody.findElements(By.tagName("td"));
 
                 for (WebElement cell : columns)
 
@@ -138,45 +136,44 @@ public class PickHomeSearchBarOptions {
             }
         }
 
-        public static void AdultAndChildrenNumber(int adult, int children){
+        public static void AdultAndChildrenNumber(int adult, int children) {
 
             homeSearchBarElements.AdultOrChildField.click();
 
             int calculation = adult - 2;
 
-            if(adult >=2){
+            if (adult >= 2) {
 
                 for (int i = 0; i < calculation; i++) {
 
                     Driver.driver.findElement(By.cssSelector("#adultPlusBtn")).click();
                 }
-            }
-            else {
+            } else {
 
-                for (int i = 2; i >= adult ; i--) {
+                for (int i = 2; i >= adult; i--) {
 
                     Driver.driver.findElement(By.cssSelector("#adultMinusBtn")).click();
                 }
             }
 
-            if(children > 0) {
+            if (children > 0) {
 
 
                 for (int i = 0; i < children; i++) {
 
                     Driver.driver.findElement(By.cssSelector("#childPlusBtn")).click();
                 }
+            } else {
             }
-            else{}
         }
 
-        public static void  HotelSearch(){
+        public static void HotelSearch() {
 
             homeSearchBarElements.HotelsSearchBy.click();
         }
     }
 
-    public static class FlightsSearchBar{
+    public static class FlightsSearchBar {
 
         public static void EnterCityOrAirportFrom(String HotelOrLocation, int PositionNumber) throws InterruptedException {
 
@@ -188,16 +185,13 @@ public class PickHomeSearchBarOptions {
 
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".select2-results-dept-0")));
 
-                if (PositionNumber == 1){
+                if (PositionNumber == 1) {
 
                     Driver.driver.findElement(By.cssSelector(".select2-results-dept-0")).click();
-                }
-
-                else{
+                } else {
                     Driver.driver.findElement(By.cssSelector("#select2-drop > ul > li:nth-child(" + PositionNumber + ")")).click();
                 }
-            }
-            catch (Exception ele) {
+            } catch (Exception ele) {
 
                 System.out.println("The amount of results do not match with selected position!");
             }
@@ -213,32 +207,30 @@ public class PickHomeSearchBarOptions {
 
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".select2-results-dept-0")));
 
-                if (PositionNumber == 1){
+                if (PositionNumber == 1) {
 
                     Driver.driver.findElement(By.cssSelector(".select2-results-dept-0")).click();
-                }
-                else{
+                } else {
                     Driver.driver.findElement(By.cssSelector("#select2-drop > ul > li:nth-child(" + PositionNumber + ")")).click();
                 }
-            }
-            catch (Exception ele) {
+            } catch (Exception ele) {
 
                 System.out.println("The amount of results do not match with selected position!");
             }
 
         }
 
-        public static void OneWay(){
+        public static void OneWay() {
 
             homeSearchBarElements.OneWayButton.click();
         }
 
-        public static void RoundTrip(){
+        public static void RoundTrip() {
 
             homeSearchBarElements.RoundTripButton.click();
         }
 
-        public static void PickClass(String Class){
+        public static void PickClass(String Class) {
 
             homeSearchBarElements.ClassDropDownList.click();
 
@@ -247,7 +239,7 @@ public class PickHomeSearchBarOptions {
             PickUp.selectByVisibleText(Class);
         }
 
-        public static void DepartDate(int year, String month, int day){
+        public static void DepartDate(int year, String month, int day) {
 
             homeSearchBarElements.StartFlightDate.click();
 
@@ -262,8 +254,7 @@ public class PickHomeSearchBarOptions {
                 if (year >= currentYear) {
 
                     Driver.driver.findElement(By.cssSelector("body > div:nth-child(18) > div.datepicker-months > table > thead > tr > th.next")).click();
-                }
-                else {
+                } else {
 
                     Driver.driver.findElement(By.cssSelector("body > div:nth-child(18) > div.datepicker-months > table > thead > tr > th.prev")).click();
                 }
@@ -285,19 +276,17 @@ public class PickHomeSearchBarOptions {
 
             WebElement tBody = Driver.driver.findElement(By.cssSelector("body > div:nth-child(18) > div.datepicker-days > table > tbody"));
 
-            List<WebElement> columns=tBody.findElements(By.tagName("td"));
+            List<WebElement> columns = tBody.findElements(By.tagName("td"));
 
-            for (WebElement cell : columns)
-            {
-                if (cell.getText().equals(MyDay) && !cell.getAttribute("Class").equals("day  old"))
-                {
+            for (WebElement cell : columns) {
+                if (cell.getText().equals(MyDay) && !cell.getAttribute("Class").equals("day  old")) {
                     cell.click();
                     break;
                 }
             }
         }
 
-        public static void ReturnDate(int year, String month, int day){
+        public static void ReturnDate(int year, String month, int day) {
 
             Driver.driver.findElement(By.cssSelector("body > div:nth-child(19) > div.datepicker-days > table > thead > tr:nth-child(1) > th.switch")).click();
 
@@ -320,11 +309,11 @@ public class PickHomeSearchBarOptions {
 
             for (int i = 1; i <= 12; i++) {
 
-                String monthName = Driver.driver.findElement(By.cssSelector("body > div:nth-child(19) > div.datepicker-months > table > tbody > tr > td > span:nth-child("+i+")")).getText();
+                String monthName = Driver.driver.findElement(By.cssSelector("body > div:nth-child(19) > div.datepicker-months > table > tbody > tr > td > span:nth-child(" + i + ")")).getText();
 
                 if (monthName.contentEquals(month)) {
 
-                    Driver.driver.findElement(By.cssSelector("body > div:nth-child(19) > div.datepicker-months > table > tbody > tr > td > span:nth-child("+i+")")).click();
+                    Driver.driver.findElement(By.cssSelector("body > div:nth-child(19) > div.datepicker-months > table > tbody > tr > td > span:nth-child(" + i + ")")).click();
                 }
             }
 
@@ -334,7 +323,7 @@ public class PickHomeSearchBarOptions {
 
             WebElement tBody = Driver.driver.findElement(By.cssSelector("div.datepicker:nth-child(19) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2)"));
 
-            List<WebElement> columns=tBody.findElements(By.tagName("td"));
+            List<WebElement> columns = tBody.findElements(By.tagName("td"));
 
             for (WebElement cell : columns)
 
@@ -348,7 +337,7 @@ public class PickHomeSearchBarOptions {
             }
         }
 
-        public static void NumberOfQuests(int adults, int child, int infants){
+        public static void NumberOfQuests(int adults, int child, int infants) {
 
             homeSearchBarElements.NumberOfQuestsField.click();
 
@@ -373,19 +362,21 @@ public class PickHomeSearchBarOptions {
             PickUpInfants.selectByVisibleText(infantsString);
 
         }
-        public static void ConfirmQuests(){
+
+        public static void ConfirmQuests() {
 
             homeSearchBarElements.QuestsDoneButton.click();
         }
-        public static void SearchBy(){
+
+        public static void SearchBy() {
 
             homeSearchBarElements.FlightSearchBy.click();
         }
     }
 
-    public static class ToursSearchBar{
+    public static class ToursSearchBar {
 
-        public static void SearchByListingOrCityName(String ListingOrCity, int PositionInCategory, int Category){
+        public static void SearchByListingOrCityName(String ListingOrCity, int PositionInCategory, int Category) {
 
             try {
 
@@ -396,15 +387,13 @@ public class PickHomeSearchBarOptions {
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#select2-drop > ul > li:nth-child(1) > ul > li:nth-child(1)")));
 
                 Driver.driver.findElement(By.cssSelector("#select2-drop > ul > li:nth-child(" + Category + ") > ul > li:nth-child(" + PositionInCategory + ")")).click();
-            }
-
-            catch (Exception ele) {
+            } catch (Exception ele) {
 
                 System.out.println("The amount of results do not match with selected category number or category position!");
             }
         }
 
-        public static void TourDate(int year, String month, int day){
+        public static void TourDate(int year, String month, int day) {
 
             homeSearchBarElements.TourCalendarField.click();
 
@@ -419,8 +408,7 @@ public class PickHomeSearchBarOptions {
                 if (year >= currentYear) {
 
                     Driver.driver.findElement(By.cssSelector("body > div:nth-child(15) > div.datepicker-months > table > thead > tr > th.next")).click();
-                }
-                else {
+                } else {
 
                     Driver.driver.findElement(By.cssSelector("body > div:nth-child(15) > div.datepicker-months > table > thead > tr > th.prev")).click();
                 }
@@ -442,12 +430,10 @@ public class PickHomeSearchBarOptions {
 
             WebElement tBody = Driver.driver.findElement(By.cssSelector("body > div:nth-child(15) > div.datepicker-days > table > tbody"));
 
-            List<WebElement> columns=tBody.findElements(By.tagName("td"));
+            List<WebElement> columns = tBody.findElements(By.tagName("td"));
 
-            for (WebElement cell : columns)
-            {
-                if (cell.getText().equals(MyDay) && !cell.getAttribute("Class").equals("day  old"))
-                {
+            for (WebElement cell : columns) {
+                if (cell.getText().equals(MyDay) && !cell.getAttribute("Class").equals("day  old")) {
                     cell.click();
                     break;
                 }
@@ -455,9 +441,9 @@ public class PickHomeSearchBarOptions {
 
         }
 
-        public static void NumberOfGuests(int NumberOfGuests){
+        public static void NumberOfGuests(int NumberOfGuests) {
 
-            if(NumberOfGuests <=5 && NumberOfGuests >0) {
+            if (NumberOfGuests <= 5 && NumberOfGuests > 0) {
 
                 homeSearchBarElements.QuestsDropDownList.click();
 
@@ -466,8 +452,7 @@ public class PickHomeSearchBarOptions {
                 String GuestsNumber = Integer.toString(NumberOfGuests);
 
                 PickGuestsNumber.selectByVisibleText(GuestsNumber + " Guests");
-            }
-            else{
+            } else {
 
                 System.out.println("Please pick a value between 0 and 5!");
             }
@@ -481,14 +466,13 @@ public class PickHomeSearchBarOptions {
 
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#select2-drop > ul > li:nth-child(2)")));
 
-            Driver.driver.findElement(By.cssSelector("#select2-drop > ul > li:nth-child(" +position+ ")")).click();
+            Driver.driver.findElement(By.cssSelector("#select2-drop > ul > li:nth-child(" + position + ")")).click();
         }
 
-        public static void SearchBy(){
+        public static void SearchBy() {
 
             homeSearchBarElements.TourSearchBy.click();
         }
-
 
 
     }

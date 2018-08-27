@@ -1,20 +1,14 @@
 package MainFolder;
 
-public class TitleCheck{
+public class TitleCheck {
 
 
+    public static void TitleChecking(String expectedTitle) {
 
-    public static void TitleChecking(String expectedTitle){
 
-
-        
-
-        if (expectedTitle.equals(Driver.driver.getTitle()))
-        {
+        if (expectedTitle.equals(Driver.driver.getTitle())) {
             System.out.println("Verification Successful - The correct title is displayed on the web page.");
-        }
-        else
-        {
+        } else {
             System.out.println("Verification Failed - An incorrect title is displayed on the web page.");
         }
 
